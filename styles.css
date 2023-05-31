@@ -1,4 +1,126 @@
 * {
     margin: 0;
     padding: 0;
-  }
+ }
+
+.container {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 160px 1fr;
+  grid-template-areas: 
+    "sidebar header"
+    "sidebar main";
+}
+
+.sidebar {
+  background-color: blue;
+  grid-area: sidebar;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.header {
+  background-color: orange;
+  grid-area: header;
+  display: flex;
+  flex-direction: column;
+}
+
+.header > .upper {
+  background-color: green;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header > .upper > .search {
+  display: flex;
+}
+
+.header > .upper > .menu {
+  display: flex;
+}
+
+.header > .lower {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header > .lower > .user {
+  display: flex;
+}
+
+.header > .lower > .util {
+  display: flex;
+}
+
+.main {
+  background-color: grey;
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 1fr 250px;
+  grid-template-rows: 270px 1fr;
+  grid-template-areas: 
+    "projects announcements"
+    "projects trendings";
+  gap: 20px;
+  padding: 20px;
+}
+
+.projects {
+  grid-area: projects;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+  /* temporary layout, requires tweaking */
+  gap: 20px;
+}
+
+.project {
+  background-color: bisque;
+  width: 100%;
+  height: 220px;
+}
+
+.announcements {
+  grid-area: announcements;
+  display: flex;
+  flex-direction: column;
+}
+
+.announcements-bar {
+  background-color: beige;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.announcement {
+  color: purple;
+
+  
+}
+
+.trendings {
+  grid-area: trendings;
+  display: flex;
+  flex-direction: column;
+}
+
+.trending-bar {
+  background-color: blanchedalmond;
+  display: flex;
+  flex-direction: column;
+  height: 260px;
+}
+
+.trending {
+  color: pink;
+}
