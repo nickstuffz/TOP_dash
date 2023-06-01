@@ -7,10 +7,12 @@
 .container {
   display: grid;
   grid-template-columns: 300px 1fr;
-  grid-template-rows: 160px 1fr;
+  grid-template-rows: 160px 1fr 60px;
   grid-template-areas: 
     "sidebar header"
-    "sidebar main";
+    "sidebar main"
+    "footer footer";
+    padding-bottom: 90px;
 }
 
 .sidebar {
@@ -18,7 +20,7 @@
   grid-area: sidebar;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 36px;
 }
 
 .logo {
@@ -28,8 +30,8 @@
   padding-top: 12px;
   padding-bottom: 12px;
   padding-left: 10px;
-
   color: white;
+  border-bottom: 2px dotted silver;
 }
 
 ul {
@@ -53,15 +55,15 @@ li:hover {
 }
 
 .header {
-  background-color: orange;
+  background-color: white;
   grid-area: header;
   display: flex;
   flex-direction: column;
 }
 
 .header > .upper {
-  background-color: green;
-  height: 60px;
+  background-color: rgb(247, 247, 247);
+  height: 64px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -69,10 +71,27 @@ li:hover {
 
 .header > .upper > .search {
   display: flex;
+  gap: 20px;
+  padding-left: 34px;
+  flex:1;
+  align-items: center;
+}
+
+.search > .bar {
+  height: 18px;
+  width: clamp(260px, 60%, 600px);
+  color: grey;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-indent: 8px;
+  font-size: 13px;
 }
 
 .header > .upper > .menu {
   display: flex;
+  gap: 24px;
+  padding-right: 40px;
+  align-items: center;
 }
 
 .header > .lower {
@@ -84,10 +103,35 @@ li:hover {
 
 .header > .lower > .user {
   display: flex;
+  gap: 24px;
+  padding-left: 48px;
+  align-items: center;
+}
+
+.user > .message {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+#avatar-large {
+  height:64px;
+  width: 64px;
 }
 
 .header > .lower > .util {
   display: flex;
+  padding-left: 20px;
+  padding-right: 50px;
+  gap: 40px;
+}
+
+.util > * {
+  height: 36px;
+  width: 98px;
+  background-color: rgb(166, 255, 255);
+  border-radius: 6px;
+  font-weight: 700;
 }
 
 .main {
@@ -159,5 +203,14 @@ li:hover {
 
 .trending {
   color: pink;
+}
+
+.footer {
+  background-color: rgb(173, 173, 173);
+  grid-area: footer;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  padding-top: 10px;
 }
 
