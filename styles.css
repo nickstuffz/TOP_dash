@@ -31,7 +31,7 @@
   padding-bottom: 12px;
   padding-left: 10px;
   color: white;
-  border-bottom: 2px dotted silver;
+  border-bottom: 3px dotted silver;
 }
 
 ul {
@@ -99,6 +99,7 @@ li:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
 }
 
 .header > .lower > .user {
@@ -129,7 +130,7 @@ li:hover {
 .util > * {
   height: 36px;
   width: 98px;
-  background-color: rgb(166, 255, 255);
+  background-color: rgb(166, 197, 255);
   border-radius: 6px;
   font-weight: 700;
 }
@@ -139,7 +140,7 @@ li:hover {
   grid-area: main;
   display: grid;
   grid-template-columns: 1fr 250px;
-  grid-template-rows: 270px 1fr;
+  grid-template-rows: 320px 1fr;
   grid-template-areas: 
     "projects announcements"
     "projects trendings";
@@ -151,6 +152,11 @@ li:hover {
   gap: 6px;
 }
 
+.project, .announcements-bar, .trending-bar {
+  box-shadow: 2px 2px grey;
+
+}
+
 .projects {
   grid-area: projects;
   display: flex;
@@ -160,7 +166,7 @@ li:hover {
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  gap: 28px;
 }
 
 .project {
@@ -168,7 +174,7 @@ li:hover {
   width: 100%;
   height: 220px;
   border-radius: 12px;
-  border-left: 14px solid rgb(255, 246, 165);
+  border-left: 14px solid rgba(233, 190, 70, 0.74);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -205,6 +211,7 @@ li:hover {
   flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 14px;
@@ -212,13 +219,9 @@ li:hover {
   border-radius: 12px;
 }
 
-.announcement {
-  flex: 1 1 auto;
-  padding-top: 4px;
-}
-
-.announcement + .announcement {
-  border-top: 1px dotted grey;
+.line {
+  height: 1px;
+  border : 1px dotted grey;
 }
 
 .announcement > p {
@@ -234,14 +237,26 @@ li:hover {
 
 .trending-bar {
   background-color: white;
+  height: 260px;
   display: flex;
   flex-direction: column;
-  height: 260px;
+  justify-content: space-around;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 14px;
+  padding-bottom: 14px;
   border-radius: 12px;
 }
 
 .trending {
-  color: pink;
+  display: flex;
+  gap: 20px;
+}
+
+.text > p {
+  color: grey;
+  padding-top: 4px;
+  font-size: 14px;
 }
 
 .footer {
